@@ -44,8 +44,7 @@ declare function idx:get-metadata($root as element(), $field as xs:string) {
                     $header/@xml:lang
                 ))
             case "date" return head((
-                $header//tei:fileDesc/tei:editionStmt/tei:edition/tei:date,
-                replace($header//tei:sourceDesc/tei:biblFull/tei:publicationStmt/tei:date, "^.*(\d+{4}).*$", "$1")
+                $header//tei:fileDesc/tei:editionStmt/tei:edition/tei:date
             ))
             case "genre" return
                 idx:get-genre($header)
